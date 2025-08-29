@@ -24,6 +24,7 @@ const copyCountBtn = getElement("copyCountBtn");
 
 // check history overlays
 function addHistory(name, number) {
+  if (!historyList) return;
   const li = document.createElement("li");
   li.className = "bg-white rounded-xl shadow p-4 flex justify-between";
   const time = new Date().toLocaleString();
@@ -34,12 +35,14 @@ function addHistory(name, number) {
     '</div>' +
     '<span class="text-sm text-gray-400">' + time + '</span>';
   historyList.prepend(li);
-  historyEmpty.classList.add("hidden");
+  if (historyEmpty) historyEmpty.classList.add("hidden");
 }
 
 // card sections overlays
 function showCallPanel(card, title, number) {
-  card.style.position = "relative"; //  overlay 
+  if (!card) return;
+  const hadPosition = card.style.position && card.style.position.length > 0;
+  if (!hadPosition) card.style.position = "relative"; //  overlay 
 
   const cover = document.createElement("div");
   cover.className = "absolute inset-0 rounded-2xl bg-black/30 grid place-items-center";
@@ -56,11 +59,14 @@ function showCallPanel(card, title, number) {
     if (cover.parentNode) {
       cover.parentNode.removeChild(cover);
     }
+    if (!hadPosition) card.style.position = ""; 
   }, 1500);
 }
 
 function showMiniNote(card, message, isOk) {
-  card.style.position = "relative";
+  if (!card) return;
+  const hadPosition = card.style.position && card.style.position.length > 0;
+  if (!hadPosition) card.style.position = "relative";
   const note = document.createElement("div");
   note.className =
     "absolute top-3 right-3 rounded-lg px-3 py-2 text-xs shadow-md " +
@@ -71,6 +77,7 @@ function showMiniNote(card, message, isOk) {
     if (note.parentNode) {
       note.parentNode.removeChild(note);
     }
+    if (!hadPosition) card.style.position = "";
   }, 1100);
 }
 
@@ -81,7 +88,9 @@ if (cardsContainer) {
     if (!card) return;
 
     const name = textOf(card.querySelector("h3")) || "Service";
-    const number = textOf(card.querySelector("p.mt-2"));
+    // prefer the number <p> by selecting the first p.mt-2 inside card
+    const numberEl = card.querySelector("p.mt-2");
+    const number = textOf(numberEl);
 
     // heart count sections
     if (e.target.closest(".btn-heart")) {
@@ -92,12 +101,16 @@ if (cardsContainer) {
 
     // copy button 
     if (e.target.closest(".btn-copy")) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
+      if (number && navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(number).then(function () {
           copies = copies + 1;
           if (copyCountEl) copyCountEl.textContent = copies;
           showMiniNote(card, "Copied " + name + ": " + number, true);
+        }, function () {
+          showMiniNote(card, "Clipboard blocked", false);
         });
+      } else {
+        showMiniNote(card, "Clipboard unavailable", false);
       }
       return;
     }
@@ -122,8 +135,8 @@ if (cardsContainer) {
 // For clear history  section
 if (clearBtn) {
   clearBtn.addEventListener("click", function () {
-    historyList.innerHTML = "";
-    historyEmpty.classList.remove("hidden");
+    if (historyList) historyList.innerHTML = "";
+    if (historyEmpty) historyEmpty.classList.remove("hidden");
   });
 }
 
