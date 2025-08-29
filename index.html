@@ -42,26 +42,38 @@
 <body class="bg-green-50 font-hind">
 
   <!-- Navbar section-->
-  <header class="bg-white shadow">
-    <div class="w-11/12 mx-auto py-4 px-4 flex items-center justify-between ">
-      <div class="flex items-center gap-2">
-        <img src="./assets/logo.png" class="w-10 h-10 " alt="">
-        <div>
-          <p class="text-[#006747] text-2xl font-extrabold"> Emergency  <br> Service </p>
-      
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <div class="rounded-full bg-gray-100 px-3 py-1 text-sm"><span id="heartCount">0</span> ❤️</div>
-        <div class="rounded-full bg-gray-100 px-3 py-1 text-sm"><span id="coinCount">100</span> 🪙</div>
-        <button id="copyCountBtn" class="rounded-full bg-emerald-600 text-white px-3 py-1 text-sm">
-          <span id="copyCount">0</span> Copy
-        </button>
-      </div>
+ 
+<header class="bg-white border-b">
+  <nav class="w-11/12 mx-auto h-16 px-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.png" class="h-10 w-10 object-contain" alt="logo">
+      <p class="text-[#006747] text-2xl font-extrabold leading-[1.05]">
+        Emergency <br> Service
+      </p>
     </div>
-  </header>
 
-  <!--main section is here -->
+    <div class="flex items-center gap-3">
+      <span class="inline-flex h-10 items-center gap-2 rounded-full bg-emerald-50 px-4 text-sm font-semibold">
+        <span id="heartCount">0</span>
+        <img src="./assets/heart.png" class="h-4 w-4 block" alt="heart">
+      </span>
+
+      <span class="inline-flex h-10 items-center gap-2 rounded-full bg-emerald-50 px-4 text-sm font-semibold">
+        <span id="coinCount">100</span>
+        <img src="./assets/coin.png" class="h-4 w-4 block" alt="coin">
+      </span>
+
+      <button id="copyCountBtn"
+              class="inline-flex h-10 items-center gap-2 rounded-full bg-emerald-600 px-5 text-sm font-semibold text-white hover:bg-emerald-700">
+        <span id="copyCount">2</span>
+        Copy
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+  <!--main HERO section is here -->
  <section class="text-white bg-[linear-gradient(90deg,_#013223_0%,_#006747_50%,_#013223_100%)]">
   <div class="w-11/12 mx-auto py-8 text-center">
     <div class="mx-auto w-16 h-16 rounded-full bg-white/10 ring-1 ring-white/25 grid place-items-center">
@@ -77,168 +89,252 @@
 
 
   <!-- Main card section start-->
-  <main class="w-11/12 mx-auto py-8 grid grid-cols-12 gap-6">
-    <!-- Cards -->
-    <section id="cards-container" class="col-span-12 lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<main class="w-11/12 mx-auto py-8 grid grid-cols-12 gap-6">
+  <!-- Cards  -->
+  <section id="cards-container" class="col-span-12 lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- CARD: National Emergency -->
-      <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
-        <div class="flex items-start justify-between">
-          <div class="w-12 h-12 rounded-xl bg-pink-100 grid place-items-center">
-            <img src="./assets/icons/emergency.png" class="w-6 h-6" alt="icon">
-          </div>
-          <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.464 1.118-4.125 2.719A4.5 4.5 0 003 8.25c0 7.125 9 10.5 9 10.5s9-3.375 9-10.5z"/>
-            </svg>
-          </button>
+    <!-- CardName: National Emergency -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-pink-100 grid place-items-center">
+          <img src="./assets/emergency.png" class="w-6 h-6" alt="icon">
         </div>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-        <h3 class="mt-4 font-semibold text-lg">National Emergency Number</h3>
-        <p class="text-sm text-gray-500">National Emergency</p>
-        <p class="mt-2 text-3xl font-bold leading-tight">999</p>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">All</span>
+      <h3 class="mt-4 font-semibold text-lg">National Emergency Number</h3>
+      <p class="text-sm text-gray-500">National Emergency</p>
+      <p class="mt-2 text-3xl font-bold leading-tight">999</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">All</span>
 
-        <div class="mt-5 flex gap-3">
-          <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">📋 Copy</button>
-          <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">📞 Call</button>
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!-- CardName: Police -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 grid place-items-center">
+          <img src="./assets/police.png" class="w-6 h-6" alt="icon">
         </div>
-      </article>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-      <!-- CARD: Police -->
-      <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
-        <div class="flex items-start justify-between">
-          <div class="w-12 h-12 rounded-xl bg-blue-100 grid place-items-center">
-            <img src="./assets/icons/police.png" class="w-6 h-6" alt="icon">
-          </div>
-          <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.464 1.118-4.125 2.719A4.5 4.5 0 003 8.25c0 7.125 9 10.5 9 10.5s9-3.375 9-10.5z"/>
-            </svg>
-          </button>
+      <h3 class="mt-4 font-semibold text-lg">Police Helpline Number</h3>
+      <p class="text-sm text-gray-500">Police</p>
+      <p class="mt-2 text-3xl font-bold">999</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Police</span>
+
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!-- CardName:Fire -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-red-100 grid place-items-center">
+          <img src="./assets/fire-service.png" class="w-6 h-6" alt="icon">
         </div>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-        <h3 class="mt-4 font-semibold text-lg">Police Helpline Number</h3>
-        <p class="text-sm text-gray-500">Police</p>
-        <p class="mt-2 text-3xl font-bold">999</p>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Police</span>
+      <h3 class="mt-4 font-semibold text-lg">Fire Service Number</h3>
+      <p class="text-sm text-gray-500">Fire Service</p>
+      <p class="mt-2 text-3xl font-bold">999</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Fire</span>
 
-        <div class="mt-5 flex gap-3">
-          <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">📋 Copy</button>
-          <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">📞 Call</button>
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!-- CardName: Ambulance -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-rose-100 grid place-items-center">
+          <img src="./assets/fire-service.png" class="w-6 h-6" alt="icon">
         </div>
-      </article>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-      <!-- CARD: Fire -->
-      <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
-        <div class="flex items-start justify-between">
-          <div class="w-12 h-12 rounded-xl bg-red-100 grid place-items-center">
-            <img src="./assets/icons/fire-truck.png" class="w-6 h-6" alt="icon">
-          </div>
-          <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.464 1.118-4.125 2.719A4.5 4.5 0 003 8.25c0 7.125 9 10.5 9 10.5s9-3.375 9-10.5z"/>
-            </svg>
-          </button>
+      <h3 class="mt-4 font-semibold text-lg">Ambulance Service</h3>
+      <p class="text-sm text-gray-500">Ambulance</p>
+      <p class="mt-2 text-3xl font-bold">1994-9999999</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Health</span>
+
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!-- CardName: Women & Child -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-fuchsia-100 grid place-items-center">
+          <img src="./assets/emergency.png" class="w-6 h-6" alt="icon">
         </div>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-        <h3 class="mt-4 font-semibold text-lg">Fire Service Number</h3>
-        <p class="text-sm text-gray-500">Fire Service</p>
-        <p class="mt-2 text-3xl font-bold">999</p>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Fire</span>
+      <h3 class="mt-4 font-semibold text-lg">Women & Child Helpline</h3>
+      <p class="text-sm text-gray-500">Women & Child Helpline</p>
+      <p class="mt-2 text-3xl font-bold">109</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Help</span>
 
-        <div class="mt-5 flex gap-3">
-          <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">📋 Copy</button>
-          <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">📞 Call</button>
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!--CardName:Anti-Corruption -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-rose-100 grid place-items-center">
+          <img src="./assets/emergency.png" class="w-6 h-6" alt="icon">
         </div>
-      </article>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-      <!-- CARD: Ambulance -->
-      <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
-        <div class="flex items-start justify-between">
-          <div class="w-12 h-12 rounded-xl bg-rose-100 grid place-items-center">
-            <img src="./assets/icons/ambulance.png" class="w-6 h-6" alt="icon">
-          </div>
-          <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.464 1.118-4.125 2.719A4.5 4.5 0 003 8.25c0 7.125 9 10.5 9 10.5s9-3.375 9-10.5z"/>
-            </svg>
-          </button>
+      <h3 class="mt-4 font-semibold text-lg">Anti-Corruption Helpline</h3>
+      <p class="text-sm text-gray-500">Anti-Corruption</p>
+      <p class="mt-2 text-3xl font-bold">106</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Govt.</span>
+
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!-- CardName: National Emergency (duplicate) -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-pink-100 grid place-items-center">
+          <img src="./assets/emergency.png" class="w-6 h-6" alt="icon">
         </div>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-        <h3 class="mt-4 font-semibold text-lg">Ambulance Service</h3>
-        <p class="text-sm text-gray-500">Ambulance</p>
-        <p class="mt-2 text-3xl font-bold">1994-9999999</p>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Health</span>
+      <h3 class="mt-4 font-semibold text-lg">National Emergency Number</h3>
+      <p class="text-sm text-gray-500">National Emergency</p>
+      <p class="mt-2 text-3xl font-bold leading-tight">999</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">All</span>
 
-        <div class="mt-5 flex gap-3">
-          <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">📋 Copy</button>
-          <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">📞 Call</button>
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!-- CardName: Police (duplicate) -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 grid place-items-center">
+          <img src="./assets/emergency.png" class="w-6 h-6" alt="icon">
         </div>
-      </article>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-      <!-- CARD: Women & Child -->
-      <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
-        <div class="flex items-start justify-between">
-          <div class="w-12 h-12 rounded-xl bg-fuchsia-100 grid place-items-center">
-            <img src="./assets/icons/women.png" class="w-6 h-6" alt="icon">
-          </div>
-          <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.464 1.118-4.125 2.719A4.5 4.5 0 003 8.25c0 7.125 9 10.5 9 10.5s9-3.375 9-10.5z"/>
-            </svg>
-          </button>
+      <h3 class="mt-4 font-semibold text-lg">Police Helpline Number</h3>
+      <p class="text-sm text-gray-500">Police</p>
+      <p class="mt-2 text-3xl font-bold">999</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Police</span>
+
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
+
+    <!-- CardName: Fire (duplicate) -->
+    <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+      <div class="flex items-start justify-between">
+        <div class="w-12 h-12 rounded-xl bg-red-100 grid place-items-center">
+          <img src="./assets/emergency.png" class="w-6 h-6" alt="icon">
         </div>
+        <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
+          <i class="fa-regular fa-heart text-gray-500 text-lg"></i>
+        </button>
+      </div>
 
-        <h3 class="mt-4 font-semibold text-lg">Women & Child Helpline</h3>
-        <p class="text-sm text-gray-500">Women & Child Helpline</p>
-        <p class="mt-2 text-3xl font-bold">109</p>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Help</span>
+      <h3 class="mt-4 font-semibold text-lg">Fire Service Number</h3>
+      <p class="text-sm text-gray-500">Fire Service</p>
+      <p class="mt-2 text-3xl font-bold">999</p>
+      <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Fire</span>
 
-        <div class="mt-5 flex gap-3">
-          <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">📋 Copy</button>
-          <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">📞 Call</button>
-        </div>
-      </article>
+      <div class="mt-5 flex gap-3">
+        <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">
+          <i class="fa-regular fa-copy mr-2"></i> Copy
+        </button>
+        <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">
+          <i class="fa-solid fa-phone-flip mr-2"></i> Call
+        </button>
+      </div>
+    </article>
 
-      <!-- CARD: Anti-Corruption -->
-      <article class="bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
-        <div class="flex items-start justify-between">
-          <div class="w-12 h-12 rounded-xl bg-rose-100 grid place-items-center">
-            <img src="./assets/icons/alert.png" class="w-6 h-6" alt="icon">
-          </div>
-          <button class="btn-heart p-2 rounded-full hover:bg-gray-100" aria-label="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.464 1.118-4.125 2.719A4.5 4.5 0 003 8.25c0 7.125 9 10.5 9 10.5s9-3.375 9-10.5z"/>
-            </svg>
-          </button>
-        </div>
+  </section>
 
-        <h3 class="mt-4 font-semibold text-lg">Anti-Corruption Helpline</h3>
-        <p class="text-sm text-gray-500">Anti-Corruption</p>
-        <p class="mt-2 text-3xl font-bold">106</p>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">Govt.</span>
-
-        <div class="mt-5 flex gap-3">
-          <button class="btn-copy flex-1 border rounded-lg px-3 py-2 text-sm hover:bg-gray-50">📋 Copy</button>
-          <button class="btn-call flex-1 bg-green-600 text-white rounded-lg px-3 py-2 text-sm hover:bg-green-700">📞 Call</button>
-        </div>
-      </article>
-
-      <!-- Add more cards as needed… -->
-    </section>
 
     <!-- History -->
     <aside class="col-span-12 lg:col-span-3 space-y-5">
       <div class="bg-white rounded-2xl p-5 shadow flex justify-between items-center">
         <div class="flex items-center gap-2">
-          <span class="text-gray-600">⏱️</span>
+          <i class="fa-regular fa-clock text-gray-600"></i>
           <h2 class="font-semibold">Call History</h2>
         </div>
         <button id="btn-clear" class="bg-green-600 text-white px-4 py-1.5 rounded-full hover:bg-green-700">Clear</button>
@@ -246,6 +342,7 @@
       <ul id="history-list" class="space-y-3"></ul>
       <p id="history-empty" class="text-center text-gray-400 text-sm">No calls yet.</p>
     </aside>
+
   </main>
 
   <script src="./script.js"></script>
