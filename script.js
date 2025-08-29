@@ -95,7 +95,7 @@ function showMiniNote(card, message, isOk) {
   }, 1100);
 }
 
-//Top toast for copy success 
+// copy successfully
 function showCopyAlert(message) {
   var host = document.getElementById("top-copy-alert");
   if (!host) {
